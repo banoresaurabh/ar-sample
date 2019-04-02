@@ -36,6 +36,20 @@
 			'z': curr.z + scale
 		})
 	})
+	
+		manager.on('tap', function(ev) {
+		if (!model) return
+
+		const curr = model.getAttribute('scale')
+		const scale = (ev.scale - 1)*10
+
+		model.setAttribute('scale', {
+			'x': curr.x + scale,
+			'y': curr.y + scale,
+			'z': curr.z + scale
+		})
+	})
+
 
 	const movingTouch = event => {
 		if (!model) return
